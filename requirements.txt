@@ -15,3 +15,4 @@ shapely
 Pillow
 lanms
 seaborn
+bounding-box

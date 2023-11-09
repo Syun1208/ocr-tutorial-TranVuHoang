@@ -62,9 +62,6 @@ class TextE2E:
     
 if __name__ == '__main__':
     image_path = os.path.join(WORK_DIR, 'data/naver-clova-ix-det/test_img/2.png')
-    # text_detection = TextDetection(model_path=os.path.join(ROOT, 'EAST/pths/model_epoch_100.pth'))
-    # boxes = text_detection.predict_det(image_path)
-    # print(boxes)
     text_e2e = TextE2E(model_det_path=os.path.join(ROOT, 'EAST/pths/model_epoch_100.pth'), model_rec_path=os.path.join(ROOT, 'CRNN/pths/CRNN_99_250.pth'))
     boxes, texts = text_e2e.predict(image_path)
     print(boxes)
