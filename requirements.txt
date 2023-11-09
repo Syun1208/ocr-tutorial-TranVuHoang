@@ -1,0 +1,17 @@
+pyarrow
+tqdm
+pandas
+fastparquet
+lmdb
+#------------------------
+torchvision
+torch
+#------------------------
+fastapi[all]
+uvicorn[standard]
+IPython
+opencv-python
+shapely
+Pillow
+lanms
+seaborn
