@@ -1,11 +1,20 @@
 import sys
 import os
+from pathlib import Path
 
-ROOT = os.getcwd()
+# Read current file path
+FILE = Path(__file__).resolve()
+# Read folder containing file path
+ROOT = FILE.parents[0]
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))  # add ROOT to PATH
+ROOT = Path(os.path.abspath(ROOT))  # relative
+# main work directory
 WORK_DIR = os.path.dirname(ROOT)
 
 sys.path.append('../')
-
+sys.path.append(os.path.join(ROOT, 'EAST'))
+sys.path.append(os.path.join(ROOT, 'CRNN'))
 
 from typing import Any
 import os
