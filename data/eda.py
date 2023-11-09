@@ -31,9 +31,6 @@ if __name__ == '__main__':
         dict_rec[f'{data_type}_img'] = len_data_rec
     
     df_det = pd.DataFrame(dict_det, index=[0])
-    print(df_det.iloc[:, 0].values[0])
     df_rec = pd.DataFrame(dict_rec, index=[0])
-    print(df_det)
-    print(df_rec)
     visualize(df_det)
     visualize(df_rec, 'text recognition')

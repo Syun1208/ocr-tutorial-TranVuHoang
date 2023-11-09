@@ -37,8 +37,9 @@ def get_images_from_lfs(path_read: str):
     f_labels.close()
 
 if __name__ == '__main__':
-    # Please clone link to get file parquet: git clone https://huggingface.co/datasets/naver-clova-ix/cord-v1
-    
+
+    if not os.path.exists('./cord-v1'):
+        os.system('git clone https://huggingface.co/datasets/naver-clova-ix/cord-v1')
     lfs_dir = sorted(glob.glob(os.path.join(ROOT, 'cord-v1/data/*.parquet')))
 
     for parquet in tqdm.tqdm(lfs_dir, colour='red', desc='Extracting datasets from cloud'):
