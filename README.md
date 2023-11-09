@@ -27,7 +27,7 @@
 <a>
     <img src="image/315110985_534092584937812_6201874043567503082_n.png" alt="Logo" width="" height="">
 </a>
-<h1 align="center">OPTICAL CHARACTE RECOGNITION</h1>
+<h1 align="center">OPTICAL CHARACTER RECOGNITION</h1>
 </div>
 
 
