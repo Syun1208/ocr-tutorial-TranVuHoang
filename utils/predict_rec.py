@@ -2,7 +2,6 @@ import sys
 
 sys.path.append('../')
 
-
 from typing import Any
 import torch
 import os
@@ -10,10 +9,19 @@ from torch.autograd import Variable
 import argparse
 from PIL import Image
 import cv2
+from pathlib import Path
 
-ROOT = os.getcwd()
+# Read current file path
+FILE = Path(__file__).resolve()
+# Read folder containing file path
+ROOT = FILE.parents[0]
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))  # add ROOT to PATH
+ROOT = Path(os.path.abspath(ROOT))  # relative
+# main work directory
 WORK_DIR = os.path.dirname(ROOT)
-sys.path.append(ROOT)
+
+sys.path.append(os.path.join(ROOT, 'CRNN'))
 
 from CRNN import utils, params, dataset
 from CRNN.models.crnn import CRNN

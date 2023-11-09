@@ -1,7 +1,17 @@
 import sys
 import os
+from pathlib import Path
 
-ROOT = os.getcwd()
+
+# Read current file path
+FILE = Path(__file__).resolve()
+# Read folder containing file path
+ROOT = FILE.parents[0]
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))  # add ROOT to PATH
+ROOT = Path(os.path.abspath(ROOT))  # relative
+# main work directory
+WORK_DIR = os.path.dirname(ROOT)
 
 sys.path.append('../')
 
@@ -72,7 +82,7 @@ class extractor(nn.Module):
 		super(extractor, self).__init__()
 		vgg16_bn = VGG(make_layers(cfg, batch_norm=True))
 		if pretrained:
-			vgg16_bn.load_state_dict(torch.load('./EAST/pths/vgg16_bn-6c64b313.pth'))
+			vgg16_bn.load_state_dict(torch.load(os.path.join(ROOT, 'pths/vgg16_bn-6c64b313.pth')))
 		self.features = vgg16_bn.features
 	
 	def forward(self, x):

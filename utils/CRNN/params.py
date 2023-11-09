@@ -2,7 +2,7 @@ import sys
 
 sys.path.append('../')
 
-from .alphabets import alphabet
+from alphabets import alphabet
 
 # about data and net
 alphabet = alphabet

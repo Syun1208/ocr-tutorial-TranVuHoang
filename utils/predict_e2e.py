@@ -53,8 +53,8 @@ class TextE2E:
             self.predicted_texts.append(predicted_text)
             
             cv2.polylines(image, [np.array([[x1, y1], [x2, y2], [x3, y3], [x4, y4]], dtype=np.int32)], isClosed=True,
-                      color=(255, 0, 0), thickness=1)
-            cv2.putText(image, predicted_text, (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
+                      color=(255, 0, 0), thickness=2)
+            cv2.putText(image, predicted_text, (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2, cv2.LINE_AA)
         
         cv2.imwrite(os.path.join(e2e_results, image_path.split('/')[-1]), image) 
         
