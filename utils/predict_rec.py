@@ -75,7 +75,9 @@ class TextRecognition:
         if type(image_path) == str:  
             with open(os.path.join(rec_results, os.path.splitext(image_path.split('/')[-1])[0] + '.txt'), 'w+') as text_save:
                 text_save.write(sim_pred)
-                
+        
+            print('Saved in: ', os.path.join(rec_results, os.path.splitext(image_path.split('/')[-1])[0] + '.txt'))
+        
         return sim_pred
 
 

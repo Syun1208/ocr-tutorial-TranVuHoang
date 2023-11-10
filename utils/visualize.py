@@ -17,21 +17,23 @@ if __name__  == '__main__':
     df_rec = pd.read_csv(os.path.join(ROOT, 'CRNN/results/losses.csv'))
     df_rec.drop(columns='Unnamed: 0', axis=1, inplace=True)
 
+    sns.set(font_scale=2.3)
     plt.figure(figsize=(20, 20))
     
     losses_det = sns.lineplot(
             data=df_det,
             markers=True, dashes=False
         )
-    
+    losses_det.set(xlabel ="The number of iterations", ylabel = "The values of losses after training", title ='The figure for metrics of the training in EAST (Text Detection)')
     losses_det.figure.savefig(os.path.join(path_results, 'det_training.png'))
 
     plt.figure(figsize=(20, 20))
-    
+
     losses_rec = sns.lineplot(
         data=df_rec,
         markers=True, dashes=False
     )
+    losses_rec.set(xlabel ="The number of iterations", ylabel = "The values of losses after training", title ='The figure for metrics of the training in CRNN (Text Recognition)')
     losses_rec.figure.savefig(os.path.join(path_results, 'rec_training.png'))
     
 

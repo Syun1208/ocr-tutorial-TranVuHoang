@@ -66,11 +66,12 @@ class TextE2E:
             cv2.putText(image, predicted_text, (x1, y1 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2, cv2.LINE_AA)
         
         cv2.imwrite(os.path.join(e2e_results, image_path.split('/')[-1]), image) 
+        print('Saved in: ', os.path.join(e2e_results, image_path.split('/')[-1]))
         
         return predicted_boxes, self.predicted_texts
     
 if __name__ == '__main__':
-    image_path = os.path.join(WORK_DIR, 'data/naver-clova-ix-det/test_img/2.png')
+    image_path = os.path.join(WORK_DIR, 'data/naver-clova-ix-det/test_img/60.png')
     text_e2e = TextE2E(model_det_path=os.path.join(ROOT, 'EAST/pths/model_epoch_100.pth'), model_rec_path=os.path.join(ROOT, 'CRNN/pths/CRNN_99_250.pth'))
     boxes, texts = text_e2e.predict(image_path)
     print(boxes)

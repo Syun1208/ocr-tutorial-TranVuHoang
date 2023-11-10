@@ -45,12 +45,13 @@ class TextDetection:
         boxes = detector(image, self.model, self.device)
         detected_image = plot_boxes(image, boxes)
         detected_image.save(os.path.join(det_results, image_path.split('/')[-1]))
+        print('Saved in: ', os.path.join(det_results, image_path.split('/')[-1]))
         
         return boxes
     
 
 if __name__ == '__main__':
-    image_path = os.path.join(WORK_DIR, 'data/naver-clova-ix-det/test_img/2.png')
+    image_path = os.path.join(WORK_DIR, 'data/naver-clova-ix-det/test_img/10.png')
     text_detection = TextDetection(model_path=os.path.join(ROOT, 'EAST/pths/model_epoch_100.pth'))
     boxes = text_detection.predict(image_path)
     print(boxes)
