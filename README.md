@@ -25,7 +25,7 @@
 <div align="center">
     <h3>Hi, I'm Long, author of this repository and also a TA of PhD. Tran Vu Hoang🚀.</h3>
 <a>
-    <img src="image/315110985_534092584937812_6201874043567503082_n.png" alt="Logo" width="" height="">
+    <img src="images/east_crnn.jpg" alt="Logo" width="" height="">
 </a>
 <h1 align="center">OPTICAL CHARACTER RECOGNITION</h1>
 </div>
